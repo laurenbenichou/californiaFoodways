@@ -15,9 +15,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: californiaFoodwaysApp_development
+  database: californiafoodwaysapp_development
   pool: 5
-  username: californiaFoodwaysApp
+  username: californiafoodwaysapp
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -41,15 +41,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: californiaFoodwaysApp_test
+  database: californiafoodwaysapp_test
   pool: 5
-  username: californiaFoodwaysApp
+  username: californiafoodwaysapp
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: californiaFoodwaysApp_production
+  database: californiafoodwaysapp_production
   pool: 5
-  username: californiaFoodwaysApp
+  username: californiafoodwaysapp
   password:

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  content: MyText
+  soundcloud_url: MyString
+  author: MyString
+  admin_id: 1
+  tags: MyString
+  published: false
+  type: 
+  image: MyString
+
+two:
+  title: MyString
+  content: MyText
+  soundcloud_url: MyString
+  author: MyString
+  admin_id: 1
+  tags: MyString
+  published: false
+  type: 
+  image: MyString
