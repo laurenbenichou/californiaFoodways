@@ -21,8 +21,10 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'jquery-rails'
+gem "jquery-rails", "< 3.0.0"
 gem 'angularjs-rails'
+
+gem 'activeadmin'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
