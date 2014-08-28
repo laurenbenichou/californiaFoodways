@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140828172436) do
+ActiveRecord::Schema.define(:version => 20140828183457) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,18 +46,32 @@ ActiveRecord::Schema.define(:version => 20140828172436) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "authors", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "county"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "stories", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.string   "soundcloud_url"
-    t.string   "author"
-    t.integer  "admin_id"
     t.string   "tags"
     t.boolean  "published"
     t.string   "image"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.string   "story_type"
+    t.integer  "author_id"
+    t.string   "author"
+    t.string   "location"
   end
 
 end
