@@ -1,6 +1,6 @@
 class Location < ActiveRecord::Base
   attr_accessible :county
-  belongs_to :story
+  has_one :story
 
   def to_s
     "#{county}"
