@@ -25,7 +25,7 @@ gem "jquery-rails", "< 3.0.0"
 gem 'angularjs-rails'
 
 gem 'activeadmin'
-gem 'sass-rails',   '~> 3.2.3'
+gem 'sass', '3.2.13'
 gem "paperclip", "~> 4.2"
 
 # To use ActiveModel has_secure_password
