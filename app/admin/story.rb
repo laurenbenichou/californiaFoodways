@@ -3,7 +3,7 @@ ActiveAdmin.register Story do
     selectable_column
     column :id
     column :title
-    column :soundcloud_url
+    column :track_id
     column :tags
     column :story_type
     column :published
@@ -15,14 +15,10 @@ ActiveAdmin.register Story do
     f.inputs 'Details', :multipart => true do
       f.input :title
       f.input :content, :as => :text
-      f.input :soundcloud_url
+      f.input :track_id
       f.input :author
       f.input :location
       f.input :published
-    end
-
-    f.inputs 'Images' do
-      f.input :image, :label => 'Post Image'
     end
 
     f.buttons

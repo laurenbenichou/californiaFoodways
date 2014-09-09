@@ -1,3 +1,10 @@
+<div class="banner">
+  <%= image_tag("banner_cream.jpg") %>
+</div>
 <div ng-controller="HomeCtrl">
-  {{stories}}
+  <select ng-model="showStory" ng-init="showStory.county= 'Alameda'"  data-ng-options="location.county for location in locations">
+        </select>
+<ul ng-repeat="story in stories">
+    <li ng-if="story.location.county == showStory.county " ng-show="story.published">{{story.title}} {{story.author.first_name}} {{story.author.last_name}} {{story.location.county}}</li>
+  </ul>
 </div>

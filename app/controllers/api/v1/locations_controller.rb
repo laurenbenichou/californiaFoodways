@@ -1,8 +1,9 @@
-class Api::V1::StoriesController < ApplicationController
+class Api::V1::LocationsController < ApplicationController
 
-  def index
+def index
     # Gets all the story from the database and make them available via GET at /api/v1/stories
-    @stories = Story.all
+    @locations = Location.all
   end
+
 
 end
