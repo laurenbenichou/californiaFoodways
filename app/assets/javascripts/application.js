@@ -16,4 +16,8 @@
 //= require angular
 //= require angular-resource
 //= require angular-animate
+//= require angular-leaflet-directive.min.js
+//= require d3
 //= require_tree ./angular
+
+

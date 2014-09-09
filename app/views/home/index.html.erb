@@ -8,3 +8,6 @@
     <li ng-if="story.location.county == showStory.county " ng-show="story.published">{{story.title}} {{story.author.first_name}} {{story.author.last_name}} {{story.location.county}}</li>
   </ul>
 </div>
+<div ng-controller="MapCtrl">
+<leaflet defaults="defaults" center="center" height="580px" width="540px"></leaflet>
+</div>

@@ -1,2 +1,2 @@
 # modules
-@californiaFoodways = angular.module("californiaFoodwaysApp", ["ngResource"])
+@californiaFoodways = angular.module("californiaFoodwaysApp", ["ngResource", "leaflet-directive"])
