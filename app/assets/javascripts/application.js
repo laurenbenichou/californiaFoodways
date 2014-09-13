@@ -21,5 +21,9 @@
 //= require Modernizr
 //= require_tree ./angular
 
+$(document).ready(function(){
+    $(".no-width").addClass("slider")
+})
+
 
 
