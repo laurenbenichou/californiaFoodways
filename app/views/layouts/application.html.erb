@@ -4,13 +4,36 @@
   <title>CaliforniaFoodwaysApp</title>
   <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- Banner -->
+  <div class="row">
+    <div class="col-xs-5">
+      <div class="banner">
+        <%= image_tag("banner_cream.jpg") %>
+      </div>
+    </div>
+        <div class="col-xs-5 text-center">
+          <nav>
+            <ul id="navigation">
+              <li>Home</li>
+              <li>About</li>
+              <li> Support</li>
+              <li>Social</li>
+            </ul>
+          </nav>
+      </div>
+  </div>
+
+
+
+  <!-- body -->
   <div ng-view>
-  <%= yield %>
+    <%= yield %>
   </div>
 </body>
 </html>

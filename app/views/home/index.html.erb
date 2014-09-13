@@ -1,5 +1,9 @@
-<div class="banner">
-  <%= image_tag("banner_cream.jpg") %>
+
+<!-- <div class="row">
+  <div ng-controller="MapCtrl" class="col-md-12">
+    <leaflet defaults="defaults" events="events" geojson="geojson" center="center" height="580px" width="540px"></leaflet>
+    </div>
+  </div>
 </div>
 <div ng-controller="HomeCtrl">
   <select ng-model="showStory" ng-init="showStory.county= 'Alameda'"  data-ng-options="location.county for location in locations">
@@ -8,6 +12,4 @@
     <li ng-if="story.location.county == showStory.county " ng-show="story.published">{{story.title}} {{story.author.first_name}} {{story.author.last_name}} {{story.location.county}}</li>
   </ul>
 </div>
-<div ng-controller="MapCtrl">
-<leaflet defaults="defaults" geojson="geojson" center="center" height="580px" width="540px"></leaflet>
-</div>
+ -->
