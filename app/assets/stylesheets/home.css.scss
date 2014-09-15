@@ -18,7 +18,7 @@
 }
 
 // Variables
-$bg-color: #FFFBF2;
+$bg-color: #DE8E86;
 $accent-color-faded: rgba(232, 141, 80, .4);
 $accent-color-full: rgba(232, 141, 80, 1);
 $title-font: 'cocogooseregular';
@@ -112,6 +112,12 @@ html, body, .container-fluid{
 
 h2, h3{
   font-family: $title-font;
+}
+
+.sponsors{
+  background-image: image-url("bg.png");
+  margin-top: -68px;
+  padding: 35px 50px 0px 50px;
 }
 
 // Top menu and banner
