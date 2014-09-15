@@ -7,9 +7,7 @@
 
 <div class="row no-margin">
   <!-- map -->
-  <div ng-controller="MapCtrl" class="col-md-5">
-    <!-- <leaflet defaults="defaults" events="events" geojson="geojson" center="center" height="580px" width="540px"></leaflet> -->
-
+  <div class="col-md-5 map" >
   </div>
 
 
@@ -20,7 +18,6 @@
           <h2>{{story.title}}<span class="label">{{story.location.county}}</span></h2>
           <h3>{{story.author.first_name}} {{story.author.last_name}}</h3>
         </div>
-
           <div class="col-xs-6">
             <iframe width="100%" height="350" scrolling="no" frameborder="no" ng-src="{{trustSrc(story.track_id)}}"></iframe>
           </div>

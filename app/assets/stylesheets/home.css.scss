@@ -117,18 +117,16 @@ h2, h3{
 // Top menu and banner
 
 .bg{
-  // background-image: image-url("banner_cream.jpg");
-  // // background-size: cover;
-  // background-position: 10%;
-  // background-size: 50%;
+  background-image: image-url("banner.jpg");
   height: 150px;
+  background-size: cover;
+  background-position: 50%;
 }
 
 .banner{
   text-align: center;
   height: 150px;
   overflow: none;
-
   h2{
   color: black;
   font-size: 50px;
@@ -136,7 +134,7 @@ h2, h3{
   margin-top: 13%;
 }
   img{
-    height: 200px;
+    height: 100px;
   }
 }
 
@@ -204,7 +202,7 @@ h2, h3{
       display: block;
       list-style: none;
       font-size: 0.5rem;
-      opacity: .5;
+      opacity: .8;
       &:hover{
         opacity: .9;
         width: 100%;
@@ -266,6 +264,15 @@ select:active {
 #map {
   width: 960px;
   height: 500px;
+}
+
+.county {
+  @include transition;
+  fill: $blue;
+  stroke: black;
+  &:hover{
+  fill: $red
+    }
 }
 
 
