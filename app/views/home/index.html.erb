@@ -1,25 +1,34 @@
+<div ng-controller="HomeCtrl">
+  <!-- select element -->
+<select ng-model="showStory" ng-init="showStory.county= 'Alameda'"  data-ng-options="location.county for location in locations">
+    <option value="">Select a County</option>
+</select>
 
-<!-- <div class="row">
-  <div ng-controller="MapCtrl" class="col-md-4">
-    <leaflet defaults="defaults" events="events" geojson="geojson" center="center" height="580px" width="540px"></leaflet>
-  </div> -->
 
-  <div class="col-md-8">
-    <div ng-controller="HomeCtrl">
-      <select ng-model="showStory" ng-init="showStory.county= 'Alameda'"  data-ng-options="location.county for location in locations">
-      </select>
+<div class="row no-margin">
+  <!-- map -->
+  <div ng-controller="MapCtrl" class="col-md-5">
+    <!-- <leaflet defaults="defaults" events="events" geojson="geojson" center="center" height="580px" width="540px"></leaflet> -->
 
-      <div class="row story-container" ng-repeat="story in stories">
-        <div class="story" ng-if="story.location.county == showStory.county " ng-show="story.published">
-        <div class="col-xs-6">
-          <h2>{{story.title}}</h2>
+  </div>
+
+
+<!-- content -->
+  <div class="col-md-7" >
+    <div class="row story-container story animate-repeat" ng-repeat="story in stories" class="" ng-if="story.location.county == showStory.county " ng-show="story.published">
+        <div class="col-xs-12 text-left">
+          <h2>{{story.title}}<span class="label">{{story.location.county}}</span></h2>
           <h3>{{story.author.first_name}} {{story.author.last_name}}</h3>
-          <iframe width="100%" height="450" scrolling="no" frameborder="no" ng-src="{{trustSrc(story.track_id)}}"></iframe>
-          {{story.location.county}}
+        </div>
 
-        </div>
-        </div>
-      </div>
+          <div class="col-xs-6">
+            <iframe width="100%" height="350" scrolling="no" frameborder="no" ng-src="{{trustSrc(story.track_id)}}"></iframe>
+          </div>
+          <div class="col-xs-6">
+            <p>{{story.content}}</p>
+          </div>
+
     </div>
   </div>
+</div>
 </div>

@@ -17,13 +17,12 @@
 //= require angular-resource
 //= require angular-animate
 //= require angular-leaflet-directive.min.js
+//= require offClick
 //= require d3
 //= require Modernizr
 //= require_tree ./angular
 
-$(document).ready(function(){
-    $(".no-width").addClass("slider")
-})
+
 
 
 

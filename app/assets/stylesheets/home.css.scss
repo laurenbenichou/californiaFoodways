@@ -38,39 +38,138 @@ $margin:(75%, 50%, 25%, 0);
   transition: all 300ms ease-out;
 }
 
-@mixin transition{
-  -webkit-transition: all 300ms ease-out;
-  -moz-transition: all 300ms ease-out;
-  -o-transition: all 300ms ease-out;
-  transition: all 300ms ease-out;
+@mixin transition-slow{
+  -webkit-transition: all 600ms ease-out;
+  -moz-transition: all 600ms ease-out;
+  -o-transition: all 600ms ease-out;
+  transition: all 600ms ease-out;
 }
 
-// Main
+
+// Angular Animation with ngAnimate + animate.css
+.ng-hide-remove {
+    -webkit-animation: bounceInLeft 500ms;
+    animation: bounceInLeft 500ms;
+}
+
+.ng-hide-add {
+    -webkit-animation: bounceOutLeft 500ms;
+    animation: bounceOutLeft 500ms;
+    display: block !important;
+}
+
+.animate-repeat{
+  max-height: 100%;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:100%;
+}
+
+// General
 html, body, .container-fluid{
   background-color: $bg-color;
-  font-size: 35px;
+  font-size: 25px;
   h2{
     font-size: 1rem;
   }
   h3{
     font-size: 0.5rem;
   }
+  p{
+    font-size: 0.5em;
+  }
+}
+
+.row{
+  margin: 0;
+}
+
+.cont{
+  position: relative;
+  bottom: 68px;
+  background-color: white;
+  border-top: $red 5px solid;
+  padding-top: 30px;
 }
 
 h2, h3{
   font-family: $title-font;
 }
 
+// Top menu and banner
+
+.bg{
+  // background-image: image-url("banner_cream.jpg");
+  // // background-size: cover;
+  // background-position: 10%;
+  // background-size: 50%;
+  height: 150px;
+}
+
 .banner{
+  text-align: center;
+  height: 150px;
+  overflow: none;
+
+  h2{
+  color: black;
+  font-size: 50px;
+  line-height: 10px;
+  margin-top: 13%;
+}
   img{
-    height: 300px;
+    height: 200px;
   }
 }
 
-#map {
-  width: 960px;
-  height: 500px;
+.toggle{
+  position: relative;
+  bottom: 20px;
+  z-index: 9999;
+   h3{
+    font-size: 25px;
+    color: black;
+    i{
+     background-color: $red;
+     border-radius: 25px;
+     height: 40px;
+     width: 40px;
+     padding: 8px;
+    }
+   }
+   .togglebutton{
+    @include transition;
+    cursor: pointer;
+    &:hover{
+      background-color: white;
+    }
+   }
 }
+
+
+.rotate{
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 
 // NAV
 @for $i from 1 through length($colors){
@@ -89,32 +188,84 @@ h2, h3{
 
 @for $i from 1 through length($margin){
   #navigation li:nth-last-of-type(#{$i}){
-    margin-left:  nth($margin, $i);
+    margin-right:  nth($margin, $i);
     }
 }
 
 
 #navigation{
   width: 100%;
+  margin: 0 0 0 -20px;
+
+  padding: 0;
    li{
      @include transition;
-     font-family: $title-font;
+      font-family: $title-font;
       display: block;
       list-style: none;
-      font-size: 1rem;
-      padding: 1.5%;
-      opacity: .2;
+      font-size: 0.5rem;
+      opacity: .5;
       &:hover{
-        opacity: .8;
+        opacity: .9;
         width: 100%;
         margin: 0;
       }
     }
+ }
+
+
+
+// select
+select {
+    font-size: 0.5em;
+    border: 1px solid $dark-green;
+    font-family: $title-font;
+    border-radius: 10px;
+    color: black;
+    padding: 12px;
+    width: 300px;
+    -webkit-appearance: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 9999;
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>") right no-repeat;
+
+    background-color: $dark-green;
+    background-transparency: 0.5;
+    background-position: right 15px top 22px;
+    background-size: 18px 18px;
+}
+
+select:active {
+    border: 1px solid #000;
 }
 
 
+// content
+.story-container{
+  @include transition;
+  // padding: 5px;
+}
 
 
+.label{
+    font-size: 0.5em;
+    border: 1px solid $dark-green;
+    font-family: $title-font;
+    border-radius: 10px;
+    color: black;
+    padding: 10px;
+    width: 200px;
+    margin-left: 20px;
+    -webkit-appearance: none;
+    background-color: $dark-green;
+}
 
+// Map
+#map {
+  width: 960px;
+  height: 500px;
+}
 
 
