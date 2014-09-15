@@ -275,4 +275,22 @@ select:active {
     }
 }
 
+.place-label{
+  font-family: $title-font;
+  font-size: 10px;
+  display: none;
+}
+
+#legend{
+  text-align: center;
+  font-family: $title-font;
+  font-size: 15px;
+  height: 100px;
+  width: 150px;
+  position: absolute;
+  border-radius: 10px;
+  top: 50px;
+  right: 65%;
+  background-color: $dark-green;
+}
 
