@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore
 //= require angular
 //= require angular-resource
 //= require angular-animate
@@ -89,78 +88,6 @@ $(document).ready(function(){
 
 
 })
-
-
-// var urls = {
-//         counties: "/visible-data/data/gis/us-counties.json",
-//         states: "/visible-data/data/gis/us-states.json"
-//     }
-//   , margin = { top: 0, right: 0, bottom: 0, left: 0 }
-//   , width = 960 - margin.right - margin.left
-//   , height = 500
-//   , path = d3.geo.path()
-//   , map;
-
-// var q = queue()
-//     .defer(d3.json, "/visible-data/data/gis/us-counties.json")
-//     .defer(d3.json, "/visible-data/data/gis/us-states.json")
-//     .await(ready);
-
-// function ready(error, countylines, statelines) {
-//     window.error = error;
-//     window.countylines = countylines;
-//     window.statelines = statelines;
-
-//     if (error) throw error;
-
-//     var stateIds = {};
-//     statelines.features.forEach(function(d) {
-//         stateIds[d.id] = d.properties.name;
-//     });
-
-//     countylines.features.forEach(function(d) {
-//         d.properties.state = stateIds[d.id.slice(0,2)];
-//     })
-
-//     // remove the loading text
-//     d3.select('.loading').remove();
-
-//     map = d3.select('#map').append('svg')
-//         .style('width', width)
-//         .style('height', height);
-
-//     var counties = map.append('g')
-//         .attr('class', 'counties')
-//       .selectAll('path')
-//         .data(countylines.features)
-//       .enter().append('path')
-//         .attr('d', path);
-
-//     counties.on('mouseover', showCaption)
-//         .on('mousemove', showCaption)
-//         .on('mouseout', function() {
-//             caption.html(starter);
-//         });
-
-//     var states = map.append('g')
-//         .attr('class', 'states')
-//       .selectAll('path')
-//         .data(statelines.features)
-//       .enter().append('path')
-//         .attr('d', path);
-
-//     var caption = d3.select('#caption')
-//       , starter = caption.html();
-
-//     function showCaption(d, i) {
-//         var name = [d.properties.name, d.properties.state].join(', ');
-//         caption.html(name);
-//     }
-
-// };
-
-// d3.selectAll('pre').attr('class', 'prettyprint');
-// prettyPrint();
 
 
 
