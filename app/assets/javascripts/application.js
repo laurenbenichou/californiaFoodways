@@ -16,11 +16,10 @@
 //= require angular
 //= require angular-resource
 //= require angular-animate
-//= require angular-leaflet-directive.min.js
 //= require offClick
-//= require d3
-//= require topojson
-//= require queue
+//= require d3Directive
+//= require topojsonDirective
+//= require queueDirective
 //= require Modernizr
 //= require_tree ./angular
 
