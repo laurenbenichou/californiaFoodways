@@ -10,8 +10,9 @@
   <div id="legend">
     <p> Click on a county! </p>
   </div>
-  <div class="col-md-5 map" >
+  <div class="col-md-5 map" ng-controller="MapCtrl" >
     <p class="loading"> Loading...</p>
+        <cali-map counties="counties" labels="labels"></cali-map>
   </div>
 
 

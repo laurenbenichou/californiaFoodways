@@ -12,49 +12,48 @@
 </head>
 <body ng-view>
   <div ng-controller="AnimationCtrl">
-
-  <!-- Banner slide up and down-->
-  <div class="row bg" >
-        <div class="col-xs-6 text-center">
-          <!-- navigation -->
-          <nav ng-show="data.active" off-click='data.active = false' off-click-filter='.toggle'>
-            <ul id="navigation">
-              <li>Home</li>
-              <li>About</li>
-              <li> Support</li>
-              <li>Social</li>
-            </ul>
-          </nav>
+    <!-- Banner slide up and down-->
+    <div class="row bg" >
+      <div class="col-xs-6 text-center">
+        <!-- navigation -->
+        <nav ng-show="data.active" off-click='data.active = false' off-click-filter='.toggle'>
+          <ul id="navigation">
+            <li>Home</li>
+            <li>About</li>
+            <li> Support</li>
+            <li>Social</li>
+          </ul>
+        </nav>
       </div>
-  </div>
-   <!-- Toggle banner -->
-  <div class="row toggle" >
+    </div>
+    <!-- Toggle banner -->
+    <div class="row toggle" >
      <div class="col-xs-12 text-center"><h3 ng-click="toggle()"><i  ng-model="btn" ng-click="btn=!btn" ng-class="{'rotate': btn}" class="fa fa-plus togglebutton"></i></h3></div>
-   </div>
+    </div>
 
-  <!-- body -->
-  <div class="cont">
-    <%= yield %>
-  </div>
+   <!-- body -->
+     <div class="cont">
+      <%= yield %>
+    </div>
 
   <!-- footer -->
-  <div class="row sponsors">
-    <div class="col-xs-2">
-      <h2>Funded By: </h2>
-    </div>
-    <div class="col-xs-4">
-      <%= image_tag("cal-humanities-logo.jpg") %>
-    </div>
-    <div class="col-xs-2">
-      <h2>Heard on:</h2>
-    </div>
-    <div class="col-xs-4">
+    <div class="row sponsors">
+      <div class="col-xs-2">
+        <h2>Funded By: </h2>
+      </div>
+      <div class="col-xs-4">
+        <%= image_tag("cal-humanities-logo.jpg") %>
+      </div>
+      <div class="col-xs-2">
+        <h2>Heard on:</h2>
+      </div>
+      <div class="col-xs-4">
        <%= image_tag("kqed.jpg") %>
+      </div>
+       <div class="col-xs-12 text-center">
+         <p> &copy; California Foodways </p>
+       </div>
     </div>
-    <div class="col-xs-12 text-center">
-     <p> &copy; California Foodways </p>
-  </div>
-  </div>
-</div>
-</body>
+    </div>
+  </body>
 </html>
