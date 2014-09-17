@@ -267,6 +267,7 @@ select:active {
 }
 
 // Map
+
 #map {
   width: 960px;
   height: 500px;
@@ -274,17 +275,26 @@ select:active {
 
 .county {
   @include transition;
-  fill: $blue;
+  fill: $orange;
   stroke: black;
   &:hover{
   fill: $red
     }
 }
 
-.place-label{
-  font-family: $title-font;
-  font-size: 10px;
-  display: none;
+// .place-label{
+//   font-family: $title-font;
+//   font-size: 10px;
+//   display: none;
+// }
+
+.county_db{
+  @include transition;
+  fill: $blue;
+  stroke: black;
+  &:hover{
+  fill: $red;
+  }
 }
 
 #legend{

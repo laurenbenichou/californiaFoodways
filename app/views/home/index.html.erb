@@ -1,6 +1,7 @@
 <div ng-controller="HomeCtrl">
   <!-- select element -->
-<select ng-model="showStory" ng-init="showStory.county= 'Alameda'"  data-ng-options="location.county for location in locations">
+<div ng-controller="MapCtrl">
+<select ng-model="showStory" ng-init="showStory= 'Alameda'"  data-ng-options="location for location in locations">
     <option value="">Select a County</option>
 </select>
 
@@ -10,15 +11,15 @@
   <div id="legend">
     <p> Click on a county! </p>
   </div>
-  <div class="col-md-5 map" ng-controller="MapCtrl" >
+  <div class="col-md-5"  >
     <p class="loading"> Loading...</p>
-        <cali-map counties="counties" labels="labels"></cali-map>
+     <div id="cali_map"></div>
   </div>
 
 
 <!-- content -->
   <div class="col-md-7" >
-    <div class="row story-container story animate-repeat" ng-repeat="story in stories" class="" ng-if="story.location.county == showStory.county " ng-show="story.published">
+    <div class="row story-container story animate-repeat" ng-repeat="story in stories" class="" ng-if="story.location.county == showStory " ng-show="story.published">
         <div class="col-xs-12 text-left">
           <h2>{{story.title}}<span class="label">{{story.location.county}}</span></h2>
           <h3>{{story.author.first_name}} {{story.author.last_name}}</h3>
@@ -32,5 +33,6 @@
 
     </div>
   </div>
+</div>
 </div>
 </div>
