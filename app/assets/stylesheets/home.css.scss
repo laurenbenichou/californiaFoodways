@@ -277,9 +277,15 @@ select:active {
   @include transition;
   fill: $orange;
   stroke: black;
-  &:hover{
-  fill: $red
-    }
+  // &:hover{
+  // fill: $red
+  //   }
+}
+
+.selected_county {
+  @include transition;
+  fill: $red;
+  stroke: black;
 }
 
 // .place-label{
@@ -288,7 +294,7 @@ select:active {
 //   display: none;
 // }
 
-.county_db{
+.county_db, .non_selected_location{
   @include transition;
   fill: $blue;
   stroke: black;

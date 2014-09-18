@@ -1,7 +1,7 @@
 <div ng-controller="HomeCtrl">
   <!-- select element -->
 <div ng-controller="MapCtrl">
-<select ng-model="showStory" ng-init="showStory= 'Alameda'"  data-ng-options="location for location in locations">
+<select ng-model="showStory" ng-init="showStory= 'Alameda'"  data-ng-options="location for location in locations" ng-change="updateMap(showStory)">
     <option value="">Select a County</option>
 </select>
 
@@ -13,7 +13,7 @@
   </div>
   <div class="col-md-5"  >
     <p class="loading"> Loading...</p>
-     <div id="cali_map"></div>
+     <div  id="cali_map"></div>
   </div>
 
 
