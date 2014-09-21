@@ -20,6 +20,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :development, :test do
+  gem 'foreman'
+end
+
 gem "jquery-rails", "< 3.0.0"
 gem 'angularjs-rails'
 gem 'angular-rails-templates'
@@ -27,7 +31,6 @@ gem 'activeadmin'
 gem 'sass', '3.2.13'
 gem 'sass-rails', '~> 3.2.3'
 gem "d3-rails"
-
 gem 'bower-rails'
 
 # To use ActiveModel has_secure_password
