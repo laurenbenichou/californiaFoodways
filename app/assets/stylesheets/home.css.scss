@@ -116,9 +116,25 @@ $margin:(75%, 50%, 25%, 0);
 }
 
 // General
+[ng-cloak].splash {
+  display: block !important;
+}
+
+.splash {
+  display: none;
+}
+
+.splash {
+  background: $blue;
+  color: white;
+  height: 1000px;
+  width: 1000px;
+  text-align: center;
+  padding-top: 50%;
+}
+
 
 // fixed width
-
 .container-fixed {
   margin: 0 auto;
   max-width: 1200px;
