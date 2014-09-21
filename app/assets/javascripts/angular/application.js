@@ -4,7 +4,7 @@ angular.module("californiaFoodwaysApp.controllers", ['ngAnimate', 'offClick']);
 
 angular.module("californiaFoodwaysApp.routes",
   ['ngAnimate', 'ui.router', 'templates'])
-  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
     /**
      * Routes and States
      */
@@ -32,4 +32,4 @@ angular.module("californiaFoodwaysApp.routes",
 
     // enable HTML5 Mode for SEO
     $locationProvider.html5Mode(true);
-});
+}]);

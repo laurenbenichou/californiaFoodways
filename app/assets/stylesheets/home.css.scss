@@ -143,7 +143,7 @@ html, body{
   }
 }
 
-html, body, .cont, .main-view-container, .bg-ca{
+html, body, .container-fixed,  .cont, .main-view-container, .bg-ca{
   height: 100%;
 }
 
@@ -253,7 +253,7 @@ h1, h2, h3{
 
 #navigation{
   width: 100%;
-  margin: 0 0 0 -20px;
+  margin: 0 0 0 -15px;
   padding: 0;
     a{
        @include transition;
@@ -338,7 +338,7 @@ select {
 
 .bg-ca{
   background-image: image-url("bg-ca.png");
-  background-position: right;
+  background-position: 550px;
   background-repeat: no-repeat;
   h1{
     margin-bottom: 10px;
