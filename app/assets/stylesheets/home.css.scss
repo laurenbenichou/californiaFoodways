@@ -298,13 +298,13 @@ h1, h2, h3{
 
 // select
 select {
-    font-size: 0.5em;
+    font-size: 0.4em;
     border: 1px solid $dark-green;
     font-family: $title-font;
     border-radius: 10px;
     color: black;
     padding: 12px;
-    width: 300px;
+    width: 147px;
     -webkit-appearance: none;
     position: absolute;
     right: 10px;
@@ -330,13 +330,13 @@ select {
 
 
 .label{
-    font-size: 0.5em;
+    font-size: 0.4em;
     border: 1px solid $dark-green;
     font-family: $title-font;
     border-radius: 10px;
     color: black;
     padding: 10px;
-    width: 200px;
+    width: 147px;;
     margin-left: 20px;
     -webkit-appearance: none;
     background-color: $dark-green;
