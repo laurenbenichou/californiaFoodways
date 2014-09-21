@@ -19,7 +19,7 @@
 //= require offClick
 //= require angular-resource
 //= require angular-animate
-//= require angular-ui-router/release/angular-ui-router.js
+//= require angular-ui-router.js
 //= require angular-rails-templates
 //= require Modernizr
 //= require_tree ./angular
