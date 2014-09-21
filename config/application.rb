@@ -11,7 +11,7 @@ end
 
 module CaliforniaFoodwaysApp
   class Application < Rails::Application
-    require "/Users/laurenbenichou/Desktop/WEBDEV_WORK/CaliforniaFoodways/californiaFoodwaysApp/config/initializers/bower_rails.rb"
+     require "#{Rails.root}/config/initializers/bower_rails.rb"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -65,5 +65,6 @@ module CaliforniaFoodwaysApp
     # Postmark gem configuration
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = { :api_key => ENV["POSTMARK_API_KEY"] }
+
   end
 end
