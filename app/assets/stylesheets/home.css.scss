@@ -354,6 +354,26 @@ select {
     font-size: 15px;
     }
     text-align: justify;
+    a{
+      text-decoration: none;
+    i{
+      @include transition;
+      font-size: 200px;
+      &:hover{
+        color: $red;
+      }
+    }
+  }
+}
+
+.fa-facebook-square{
+  color: $dark-green;
+}
+.fa-twitter-square{
+    color: $blue;
+  }
+.fa-envelope-square{
+    color: $orange;
 }
 
 .bg-ca{
