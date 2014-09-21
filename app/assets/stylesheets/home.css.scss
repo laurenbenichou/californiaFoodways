@@ -47,6 +47,7 @@ $margin:(75%, 50%, 25%, 0);
 
 
 // Angular Animation with ngAnimate + animate.css
+
 .ng-hide-remove {
     -webkit-animation: bounceInLeft 500ms;
     animation: bounceInLeft 500ms;
@@ -83,8 +84,38 @@ $margin:(75%, 50%, 25%, 0);
   max-height:100%;
 }
 
+.main-view-container{
+    // Animations for the separate UI Views
+    &.ng-enter,
+    &.ng-leave{
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    &.ng-enter{
+      -webkit-transition:.2s ease-out all .2s;
+        transition:.2s ease-out all .2s;
+    }
+
+    &.ng-leave{
+       -webkit-transition:.2s ease-out all;
+        transition:.2s ease-out all;
+    }
+
+    &.ng-enter,
+    &.ng-leave.ng-leave-active{
+        opacity: 0
+    }
+
+    &.ng-leave,
+    &.ng-enter.ng-enter-active{
+        opacity:1;
+    }
+}
+
 // General
-html, body, .container-fluid{
+html, body{
   background-color: $bg-color;
   font-size: 25px;
   h2{
@@ -96,6 +127,10 @@ html, body, .container-fluid{
   p{
     font-size: 0.5em;
   }
+}
+
+html, body, .cont, .main-view-container, .bg-ca{
+  height: 100%;
 }
 
 .row{
@@ -110,7 +145,7 @@ html, body, .container-fluid{
   padding-top: 30px;
 }
 
-h2, h3{
+h1, h2, h3{
   font-family: $title-font;
 }
 
@@ -118,6 +153,11 @@ h2, h3{
   background-image: image-url("bg.png");
   margin-top: -68px;
   padding: 35px 50px 0px 50px;
+}
+
+.active{
+  opacity: 1!important;
+  color: white!important;
 }
 
 // Top menu and banner
@@ -174,24 +214,29 @@ h2, h3{
   transform: rotate(45deg);
 }
 
+.no-rotate{
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
 
 // NAV
 @for $i from 1 through length($colors){
-  #navigation li:nth-last-of-type(#{$i}){
+  #navigation a:nth-last-of-type(#{$i}){
     background-color:  nth($colors, $i);
     }
 }
 
 
 @for $i from 1 through length($width){
-  #navigation li:nth-last-of-type(#{$i}){
+  #navigation a:nth-last-of-type(#{$i}){
     width:  nth($width, $i);
     }
 }
 
 
 @for $i from 1 through length($margin){
-  #navigation li:nth-last-of-type(#{$i}){
+  #navigation a:nth-last-of-type(#{$i}){
     margin-right:  nth($margin, $i);
     }
 }
@@ -200,20 +245,23 @@ h2, h3{
 #navigation{
   width: 100%;
   margin: 0 0 0 -20px;
-
   padding: 0;
-   li{
-     @include transition;
+    a{
+       @include transition;
+      text-decoration: none;
+      color: black;
       font-family: $title-font;
       display: block;
-      list-style: none;
       font-size: 0.5rem;
       opacity: .8;
       &:hover{
         opacity: .9;
         width: 100%;
         margin: 0;
-      }
+     }
+      &:active{
+       opacity: 1;
+     }
     }
  }
 
@@ -234,16 +282,15 @@ select {
     top: 10px;
     z-index: 9999;
     background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>") right no-repeat;
-
     background-color: $dark-green;
     background-transparency: 0.5;
     background-position: right 15px top 22px;
     background-size: 18px 18px;
+    &:active{
+      border: 1px solid #000;
+    }
 }
 
-select:active {
-    border: 1px solid #000;
-}
 
 
 // content
@@ -264,6 +311,29 @@ select:active {
     margin-left: 20px;
     -webkit-appearance: none;
     background-color: $dark-green;
+}
+
+.line{
+  width: 100%;
+  border-top: 2px solid grey;
+  margin-bottom: 40px;
+}
+
+.about{
+  p{
+    font-family: $title-font;
+    font-size: 15px;
+    }
+    text-align: justify;
+}
+
+.bg-ca{
+  background-image: image-url("bg-ca.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  h1{
+    margin-bottom: 10px;
+  }
 }
 
 // Map
@@ -288,11 +358,6 @@ select:active {
   stroke: black;
 }
 
-// .place-label{
-//   font-family: $title-font;
-//   font-size: 10px;
-//   display: none;
-// }
 
 .county_db, .non_selected_location{
   @include transition;

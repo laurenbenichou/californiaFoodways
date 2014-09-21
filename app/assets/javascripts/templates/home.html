@@ -1,0 +1,37 @@
+
+  <!-- select element -->
+<div ng-controller="MapCtrl">
+<select ng-model="showStory" ng-init="showStory= 'Alameda'"  data-ng-options="location for location in locations" ng-change="updateMap(showStory)">
+    <option value="">Select a County</option>
+</select>
+
+
+<div class="row no-margin">
+  <!-- map -->
+  <div id="legend">
+    <p> Click on a county! </p>
+  </div>
+  <div class="col-md-5"  >
+    <p class="loading"> Loading...</p>
+     <div  id="cali_map"></div>
+  </div>
+
+
+<!-- content -->
+  <div class="col-md-7" >
+    <div class="row story-container story animate-repeat" ng-repeat="story in stories" class="" ng-if="story.location.county == showStory " ng-show="story.published">
+        <div class="col-xs-12 text-left">
+          <h2>{{story.title}}<span class="label">{{story.location.county}}</span></h2>
+          <h3>{{story.author.first_name}} {{story.author.last_name}}</h3>
+        </div>
+          <div class="col-xs-6">
+            <iframe width="100%" height="400" scrolling="no" frameborder="no" ng-src="{{trustSrc(story.track_id)}}"></iframe>
+          </div>
+          <div class="col-xs-6">
+            <p>{{story.content}}</p>
+          </div>
+
+    </div>
+  </div>
+</div>
+</div>

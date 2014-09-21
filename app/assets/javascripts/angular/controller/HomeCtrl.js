@@ -1,8 +1,10 @@
 app.controller('HomeCtrl', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
-    $scope.stories = [];
 
+
+    $scope.stories = [];
     // Get stories from datavase
     $http.get('/api/v1/stories.json').success(function(data) {
+      console.log(data)
       return $scope.stories = data.stories;
     });
 
@@ -10,5 +12,6 @@ app.controller('HomeCtrl', ['$scope', '$http', '$sce', function($scope, $http, $
     return $scope.trustSrc = function(src) {
       return $sce.trustAsResourceUrl(src);
     };
+
 
 }]);

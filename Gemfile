@@ -22,18 +22,20 @@ end
 
 gem "jquery-rails", "< 3.0.0"
 gem 'angularjs-rails'
-gem 'underscore-rails'
+gem 'angular-rails-templates'
 gem 'activeadmin'
 gem 'sass', '3.2.13'
 gem 'sass-rails', '~> 3.2.3'
-gem "paperclip", "~> 4.2"
 gem "d3-rails"
+
+gem 'bower-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'

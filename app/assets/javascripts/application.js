@@ -16,11 +16,14 @@
 //= require topojson
 //= require queue
 //= require angular
+//= require offClick
 //= require angular-resource
 //= require angular-animate
-//= require offClick
+//= require angular-ui-router/release/angular-ui-router.js
+//= require angular-rails-templates
 //= require Modernizr
 //= require_tree ./angular
+//= require_tree ./templates
 
 
 
