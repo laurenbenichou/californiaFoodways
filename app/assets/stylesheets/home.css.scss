@@ -365,6 +365,7 @@ select {
   @include transition;
   fill: $red;
   stroke: black;
+  cursor: pointer;
 }
 
 
