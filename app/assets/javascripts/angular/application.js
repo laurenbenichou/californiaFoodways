@@ -3,7 +3,7 @@ var app = angular.module("californiaFoodwaysApp", ['californiaFoodwaysApp.contro
 angular.module("californiaFoodwaysApp.controllers", ['ngAnimate', 'offClick']);
 
 angular.module("californiaFoodwaysApp.routes",
-  ['ngAnimate','ui.router', 'templates'])
+  ['ngAnimate', 'ui.router', 'templates'])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     /**
      * Routes and States

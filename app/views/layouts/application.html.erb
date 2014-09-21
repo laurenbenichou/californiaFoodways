@@ -30,6 +30,7 @@
 </script>
 
   <body ng-app="californiaFoodwaysApp">
+    <div class="container-fixed">
     <div ng-controller="AnimationCtrl">
       <!-- Banner slide up and down-->
       <div class="row bg" >
@@ -48,7 +49,7 @@
 
       <!-- Button to Toggle banner -->
       <div class="row toggle" >
-       <div class="col-xs-1 col-xs-offset-5 text-center"><h3 ng-click="toggle()"><i  ng-model="btn" ng-click="btn=!btn"  off-click-filter='
+       <div class="col-s-1 col-s-offset-5 text-center"><h3 ng-click="toggle()"><i  ng-model="btn" ng-click="btn=!btn"  off-click-filter='
         #navigation'  off-click="btn = !btn" off-click-if="data.active" ng-class="{'rotate': btn}" class="fa fa-plus togglebutton"></i></h3></div>
      </div>
     </div>
@@ -77,5 +78,6 @@
       </div>
     </div>
     </div>
+  </div>
   </body>
 </html>
