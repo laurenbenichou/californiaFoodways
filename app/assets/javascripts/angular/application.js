@@ -11,20 +11,20 @@ angular.module("californiaFoodwaysApp.routes",
     $stateProvider
         .state('home', {
             url: '/',
-            templateUrl: 'assets/templates/home.html',
+            templateUrl: 'home.html',
             controller: 'HomeCtrl'
         })
         .state('about', {
             url: '/about',
-            templateUrl: 'assets/templates/about.html'
+            templateUrl: 'about.html'
         })
         .state('contact', {
             url: '/contact',
-            templateUrl: 'assets/templates/contact.html'
+            templateUrl: 'contact.html'
         })
         .state('support', {
             url: '/support',
-            templateUrl: 'assets/templates/support.html'
+            templateUrl: 'support.html'
         })
 
     // default fall back route
