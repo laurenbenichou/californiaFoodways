@@ -15,7 +15,7 @@ CaliforniaFoodwaysApp::Application.routes.draw do
 
 root :to => 'home#index'
 
-get "*path.html" => "home#index", :layout => 0
+get "*path.html" => "home#index"
 get "*path" => "home#index"
 
 end
