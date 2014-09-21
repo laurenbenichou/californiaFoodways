@@ -214,11 +214,6 @@ h1, h2, h3{
   transform: rotate(45deg);
 }
 
-.no-rotate{
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
 
 // NAV
 @for $i from 1 through length($colors){

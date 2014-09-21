@@ -33,20 +33,3 @@ angular.module("californiaFoodwaysApp.routes",
     // enable HTML5 Mode for SEO
     $locationProvider.html5Mode(true);
 });
-    //   // route for the home page
-    //   $routeProvider
-    //   .when('/', {
-    //     templateUrl : 'templates/home.html'
-    //   })
-    //   // route for the about page
-    //   .when('/about', {
-    //     templateUrl : 'templates/about.html'
-    //   })
-
-    //   // route for the contact page
-    //   .when('/contact', {
-    //     templateUrl : 'templates/contact.html'
-    //   });
-
-    // $locationProvider.html5Mode(true);
-  // });
