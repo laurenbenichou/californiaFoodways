@@ -144,7 +144,7 @@ app.controller('MapCtrl', ['$scope', '$http', function($scope, $http){
 
         // Show captions in legend
         function showCaption(d) {
-         legend = d3.select('#legend'),
+         legend = d3.select('#countyname'),
          title = d.properties.name;
          legend.html(title);
        }

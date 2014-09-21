@@ -45,6 +45,12 @@ $margin:(75%, 50%, 25%, 0);
   transition: all 600ms ease-out;
 }
 
+@mixin dots{
+  border-radius: 41px;
+  height: 30px;
+  width: 30px;
+}
+
 
 // Angular Animation with ngAnimate + animate.css
 
@@ -392,16 +398,58 @@ select {
   }
 }
 
-#legend{
+#countyname{
   text-align: center;
   font-family: $title-font;
   font-size: 15px;
-  height: 100px;
-  width: 150px;
+  height: 50px;
+  width: 200px;
   position: absolute;
   border-radius: 10px;
   top: 50px;
-  right: 65%;
+  right: 55%;
   background-color: $dark-green;
 }
+
+
+#legend{
+  text-align: center;
+  font-family: $title-font;
+  font-size: 10px;
+  height: 100px;
+  width: 300px;
+  position: absolute;
+  border-radius: 10px;
+  top: 520px;
+  right: 69%;
+  background-color: white;
+}
+
+.table>tbody>tr>td{
+  border-top: none;
+  padding-top: 10px;
+}
+
+
+#published{
+  .dot {
+    @include dots;
+    background-color: #C0DECB;
+  }
+}
+
+#selected{
+  .dot{
+    @include dots;;
+    background-color: $red;
+    }
+}
+
+#coming-soon{
+  .dot{
+    @include dots;
+    background-color: $orange;
+  }
+}
+
 
