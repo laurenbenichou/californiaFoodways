@@ -17,13 +17,14 @@
 //= require queue
 //= require angular
 //= require offClick
+//= require Modernizr
 //= require angular-resource
 //= require angular-animate
 //= require angular-ui-router
 //= require angular-rails-templates
-//= require Modernizr
 //= require_tree ./angular
 //= require_tree ./templates
+
 
 
 
