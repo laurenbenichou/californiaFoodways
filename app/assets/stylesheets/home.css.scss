@@ -163,12 +163,14 @@ html, body, .container-fixed,  .cont, .main-view-container, .bg-ca{
   margin: 0;
 }
 
+.main-view-container{
+  padding-top: 30px;
+}
 .cont{
   position: relative;
   bottom: 68px;
   background-color: white;
   border-top: $red 5px solid;
-  padding-top: 30px;
 }
 
 h1, h2, h3{
