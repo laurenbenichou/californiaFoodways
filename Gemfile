@@ -32,6 +32,7 @@ gem 'sass', '3.2.13'
 gem 'sass-rails', '~> 3.2.3'
 gem "d3-rails"
 gem 'bower-rails'
+gem 'postmark-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
