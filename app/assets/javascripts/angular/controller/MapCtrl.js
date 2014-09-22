@@ -155,6 +155,11 @@ app.controller('MapCtrl', ['$scope', '$http', function($scope, $http){
         $scope.showStory = [county_name]
         $scope.$apply()
       }
+
+      $scope.updateMap($scope.showStory)
     }
+
   })
+
+
 }])
