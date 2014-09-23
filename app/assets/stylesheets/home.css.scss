@@ -17,11 +17,42 @@
 
 }
 
+
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('fonts/lato-regular-webfont.eot');
+    src: url('fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lato-regular-webfont.woff2') format('woff2'),
+         url('fonts/lato-regular-webfont.woff') format('woff'),
+         url('fonts/lato-regular-webfont.ttf') format('truetype'),
+         url('fonts/lato-regular-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'latobold';
+    src: url('fonts/lato-bold-webfont.eot');
+    src: url('fonts/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lato-bold-webfont.woff2') format('woff2'),
+         url('fonts/lato-bold-webfont.woff') format('woff'),
+         url('fonts/lato-bold-webfont.ttf') format('truetype'),
+         url('fonts/lato-bold-webfont.svg#latobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 // Variables
 $bg-color: #DE8E86;
 $accent-color-faded: rgba(232, 141, 80, .4);
 $accent-color-full: rgba(232, 141, 80, 1);
-$title-font: 'cocogooseregular';
+$title-font: 'latobold';
+$content-font: 'latoregular';
 $red:  #DE8E86;
 $orange: #FDD684;
 $blue: #C0DECB;
@@ -298,7 +329,7 @@ h1, h2, h3{
 
 // select
 select {
-    font-size: 0.4em;
+    font-size: 0.5em;
     border: 1px solid $dark-green;
     font-family: $title-font;
     border-radius: 10px;
@@ -354,7 +385,7 @@ select {
 
 .about{
   p{
-    font-family: $title-font;
+    font-family: $content-font;
     font-size: 15px;
     }
     text-align: justify;
@@ -423,9 +454,11 @@ select {
 }
 
 #countyname{
+  p{
+    font-family: $title-font;
+    font-size: 0.7em;
+  }
   text-align: center;
-  font-family: $title-font;
-  font-size: 15px;
   height: 50px;
   width: 200px;
   position: absolute;
