@@ -8,7 +8,6 @@ app.controller('MapCtrl', ['$scope', '$http', function($scope, $http){
   var others = []
   var starter = "<p>Click on a county</p>"
 
-
   // Get the present locations in database
   $http.get('/api/v1/locations.json').success(function(data) {
 
@@ -18,12 +17,14 @@ app.controller('MapCtrl', ['$scope', '$http', function($scope, $http){
         $scope.locations.push(county_name)
       }
 
+    $scope.showStory = $scope.locations[$scope.locations.length -1]
+
+
     // create the d3 map of California
     var el = d3.select("#cali_map");
     var margin = {top: 10, right: 10, bottom: 10, left: 10};
     width = 500 - margin.left - margin.right,
     height = 550 - margin.top - margin.bottom;
-
     var projection = d3.geo.albers()
         .translate([width / 3, height / 3])
         .parallels([33, 40.5])
@@ -34,7 +35,6 @@ app.controller('MapCtrl', ['$scope', '$http', function($scope, $http){
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     var g = svg.append('g');
-
 
 
     queue()
@@ -48,6 +48,7 @@ app.controller('MapCtrl', ['$scope', '$http', function($scope, $http){
 
       // if no error then remove "loading"
       d3.select('.loading').remove();
+
 
 
         // Get all the counties in ca from  json file
@@ -68,23 +69,17 @@ app.controller('MapCtrl', ['$scope', '$http', function($scope, $http){
         // Compare location in db and california counties and get info
         // for locations in the database so that we can map them
         for (var i = 0; i < counties.length; i++) {
-        // we want to know if a[i] is found in b
             var match = false; // we haven't found it yet
             for (var j = 0; j < $scope.locations.length; j++) {
               if (counties[i].properties.name == $scope.locations[j]) {
-                // we have found a[i] in b, so we can stop searching
                 match = true;
                 break;
               }
-            // if we never find a[i] in b, the for loop will simply end,
-            // and match will remain false
           }
-        // add a[i] to newArray only if we didn't find a match.
         if (match) {
           locations_map.push(counties[i]);
         }
       }
-
 
         // Get all the counties from db onto map
         $scope.county_db = g.selectAll(".county_db")
@@ -105,13 +100,13 @@ app.controller('MapCtrl', ['$scope', '$http', function($scope, $http){
         // on map and from the select option.
 
         $scope.updateMap =  function(showStory){
-          for (var i = 0; i < locations_map.length; i++){
-            if(locations_map[i].properties.name == showStory){
-              current_location.push(locations_map[i])
-            }else{
-              others.push(locations_map[i])
+            for (var i = 0; i < locations_map.length; i++){
+              if(locations_map[i].properties.name == showStory){
+                current_location.push(locations_map[i])
+              }else{
+                others.push(locations_map[i])
+              }
             }
-          }
 
           // resets previously selected location
           non_selected_locations = g.selectAll(".non_selected_location")
@@ -138,8 +133,6 @@ app.controller('MapCtrl', ['$scope', '$http', function($scope, $http){
                    legend.html(starter);
                  })
                   .on("click", change_showStory)
-
-
         }
 
         // Show captions in legend
@@ -154,12 +147,11 @@ app.controller('MapCtrl', ['$scope', '$http', function($scope, $http){
         county_name = d.properties.name;
         $scope.showStory = [county_name]
         $scope.$apply()
+        $scope.updateMap($scope.showStory)
       }
-
-      $scope.updateMap($scope.showStory)
+       $scope.updateMap($scope.showStory)
     }
 
   })
-
 
 }])

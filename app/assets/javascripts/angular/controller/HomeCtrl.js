@@ -5,7 +5,6 @@ app.controller('HomeCtrl', ['$scope', '$http', '$sce', function($scope, $http, $
     $http.get('/api/v1/stories.json').success(function(data) {
       console.log(data)
       return $scope.stories = data.stories;
-
     });
 
     // Get soundcloud Iframe
