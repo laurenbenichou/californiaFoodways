@@ -33,8 +33,6 @@
 }
 
 
-
-
 @font-face {
     font-family: 'latobold';
     src: url('fonts/lato-bold-webfont.eot');
@@ -87,11 +85,15 @@ $margin:(75%, 50%, 25%, 0);
 
 .ng-hide-remove {
     -webkit-animation: bounceInLeft 500ms;
+    -moz-animation: bounceInLeft 500ms;
+    -o-animation: bounceInLeft 500ms;
     animation: bounceInLeft 500ms;
 }
 
 .ng-hide-add {
     -webkit-animation: bounceOutLeft 500ms;
+    -moz-animation: bounceOutLeft 500ms;
+    -o-animation: bounceOutLeft 500ms;
     animation: bounceOutLeft 500ms;
     display: block !important;
 }
@@ -104,6 +106,8 @@ $margin:(75%, 50%, 25%, 0);
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leave {
   -webkit-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
   transition:all linear 0.5s;
 }
 
@@ -133,11 +137,15 @@ $margin:(75%, 50%, 25%, 0);
 
     &.ng-enter{
       -webkit-transition:.2s ease-out all .2s;
+      -o-transition:.2s ease-out all .2s;
+      -moz-transition:.2s ease-out all .2s;
         transition:.2s ease-out all .2s;
     }
 
     &.ng-leave{
        -webkit-transition:.2s ease-out all;
+       -o-transition:.2s ease-out all;
+       -moz-transition:.2s ease-out all;
         transition:.2s ease-out all;
     }
 
@@ -276,6 +284,8 @@ h1, h2, h3{
 
 .rotate{
   -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -337,6 +347,9 @@ select {
     padding: 12px;
     width: 147px;
     -webkit-appearance: none;
+    -o-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     position: absolute;
     right: 10px;
     top: 10px;
@@ -356,22 +369,9 @@ select {
 // content
 .story-container{
   @include transition;
-  // padding: 5px;
 }
 
 
-// .label{
-//     font-size: 0.4em;
-//     border: 1px solid $dark-green;
-//     font-family: $title-font;
-//     border-radius: 10px;
-//     color: black;
-//     padding: 10px;
-//     width: 147px;;
-//     margin-left: 20px;
-//     -webkit-appearance: none;
-//     background-color: $dark-green;
-// }
 
 .story-container{
   margin-top: 60px;
@@ -431,9 +431,6 @@ select {
   @include transition;
   fill: $orange;
   stroke: black;
-  // &:hover{
-  // fill: $red
-  //   }
 }
 
 .selected_county {
